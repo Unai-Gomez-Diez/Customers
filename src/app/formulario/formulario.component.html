@@ -1,0 +1,33 @@
+<div *ngIf="customer">
+  <form [formGroup]="formulario" (ngSubmit)="submit()">
+    <p>Id:
+      {{customer.id}}</p>
+    <p>Name:
+      <input type="text" formControlName="name" value="{{customer.name}}">
+      <span *ngIf="this.formulario.get('name')?.errors?.['required']">
+    (Este campo es requerido)
+  </span> </p>
+    <p>Address:
+      <input type="text" formControlName="address" value="{{customer.address}}">
+      <span *ngIf="this.formulario.get('address')?.errors?.['required']">
+    (Este campo es requerido)
+  </span> </p>
+    <p>City:
+      <input type="text" formControlName="city" value="{{customer.city}}">
+      <span *ngIf="this.formulario.get('city')?.errors?.['required']">
+    (Este campo es requerido)
+  </span> </p>
+    <p>State:
+      <input type="text" formControlName="state" value="{{customer.state}}">
+      <span *ngIf="this.formulario.get('state')?.errors?.['required']">
+    (Este campo es requerido)
+  </span> </p>
+    <p>Country:
+      <input type="text" formControlName="country" value="{{customer.country}}">
+      <span *ngIf="this.formulario.get('country')?.errors?.['required']">
+    (Este campo es requerido)
+  </span> </p>
+    <button type="submit">Editar</button>
+  </form>
+
+</div>
